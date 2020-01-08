@@ -7,8 +7,15 @@ const user = new User({ name: 'myname', age: 20 });
 // console.log(user.get('name'));
 // console.log(user.get('age'));
 
-user.on('change', () => {});
-user.on('change', () => {});
-user.on('rebtbn', () => {});
+user.on('change', () => {
+  console.log('change #1');
+});
+user.on('change', () => {
+  console.log('change #2');
+});
+user.on('save', () => {
+  console.log('Save');
+});
 
-console.log(user);
+user.trigger('change');
+// console.log(user);
