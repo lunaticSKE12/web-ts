@@ -2,10 +2,7 @@ import { User } from './models/User';
 
 const user = new User({ name: 'new record', age: 1 });
 
-// user.set({ name: 'NEW NAME', age: 999 });
-
-user.events.on('change', () => {
-  console.log('changeee');
-});
-
-user.events.trigger('change');
+user.attributes.get('id');
+user.attributes.get('name');
+user.attributes.get('age');
+user.sync.save();
