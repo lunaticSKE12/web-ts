@@ -2,19 +2,16 @@ import { User } from './models/User';
 
 const user = new User({ name: 'new record', age: 1 });
 
-// A quick reminder on accessors
+// console.log(user.get('name'));
 
-// class Person {
-//   constructor(public firstName: string, public lastName: string) {}
+// Reminder on how 'this' work in js
 
-//   get fullname(): string {
-//     return `${this.firstName} ${this.lastName}`;
-//   }
-// }
+const colors = {
+  color: 'red',
+  printColor() {
+    console.log(this.color);
+  }
+};
 
-// const person = new Person('firstname', 'lasename');
-// console.log(person.fullname);
-
-user.on('change', () => {
-  console.log('user was change');
-});
+const printColor = colors.printColor;
+printColor();
