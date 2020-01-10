@@ -1,6 +1,8 @@
 {
   "users": [
     {
+      "name": "new record",
+      "age": 1,
       "id": 1
     },
     {
